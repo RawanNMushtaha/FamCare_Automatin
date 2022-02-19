@@ -12,7 +12,7 @@ package main.java.com.famcare.famcare_automation;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Gaza Talent Hub Automation Test");
+        System.out.println("Famcare Apps Automation Test");
 
     }
 }
