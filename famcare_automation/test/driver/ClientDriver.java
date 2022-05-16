@@ -16,6 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import testrail.TestRailManager;
 
 /**
@@ -34,10 +35,12 @@ public class ClientDriver {
     private static final String reportFormat = "xml";
     private static final String testName = "Untitled";
     public static AndroidDriver<AndroidElement> driver = null;
+    private static WebDriverWait wait;
 
     @BeforeClass
     public static void setUp() throws MalformedURLException {
         System.out.println("InitiSetup Started ..");
+
 //        dc.setCapability("reportDirectory", reportDirectory);
 //        dc.setCapability("reportFormat", reportFormat);
 //        dc.setCapability("testName", testName);
@@ -46,7 +49,8 @@ public class ClientDriver {
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "sa.app.famcare.MainActivity");
         driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), dc);
         driver.setLogLevel(Level.INFO);
-
+        wait = new WebDriverWait(driver, 10);
+        base = new WebBaseTest(driver, wait, javascriptExecutor);
     }
 
     @Test
