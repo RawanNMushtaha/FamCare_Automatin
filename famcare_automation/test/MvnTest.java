@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.junit.runners.Suite;
+import signin.Signin;
 
 /**
  *
@@ -24,7 +25,8 @@ import org.junit.runners.Suite;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    ClientDriver.class, //    SigninLayout.class,
+    ClientDriver.class,
+    Signin.class, //    SigninLayout.class,
 //    SigninWithInvalid.class,
 //    SignupLayout.class,
 //    SiginupWithInvalid.class,
