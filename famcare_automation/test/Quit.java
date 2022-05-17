@@ -18,6 +18,11 @@ public class Quit {
 
     @Test
     public void quit() {
-        ClientDriver.driver.quit();
+        try {
+            ClientDriver.driver.quit();
+            System.out.println("Quit driver");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

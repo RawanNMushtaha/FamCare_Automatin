@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Coordinates;
 import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -231,32 +232,33 @@ public class WebBaseTest {
         driver.manage().timeouts().implicitlyWait(numOfSeconds, TimeUnit.SECONDS);
     }
 
-//    /**
-//     * Wait for presence of element
-//     *
-//     * @param locator
-//     */
-//    public void waitForElementToBeVisibleBy(By locator) {
-//        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//    }
-//
-//    /**
-//     * Wait for element to be click able
-//     *
-//     * @param locator
-//     */
-//    public void waitForElementToBeClickableBy(By locator) {
-//        wait.until(ExpectedConditions.elementToBeClickable(locator));
-//    }
-//
-//    /**
-//     * Wait for element to be Click able
-//     *
-//     * @param element
-//     */
-//    public void waitForElementToBeClickable(WebElement element) {
-//        wait.until(ExpectedConditions.elementToBeClickable(element));
-//    }
+    /**
+     * Wait for presence of element
+     *
+     * @param locator
+     */
+    public void waitForElementToBeVisibleBy(By locator) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    /**
+     * Wait for element to be click able
+     *
+     * @param locator
+     */
+    public void waitForElementToBeClickableBy(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    /**
+     * Wait for element to be Click able
+     *
+     * @param element
+     */
+    public void waitForElementToBeClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
     /**
      *
      * @param element
@@ -267,21 +269,26 @@ public class WebBaseTest {
         select.selectByIndex(index);
     }
 
-//    /**
-//     * Wait for the element to be click able then try to click element toClick
-//     * until element is shown
-//     *
-//     * @param toClick
-//     * @param by
-//     */
-//    public void clickUntillVisibilityOfBy(WebElement toClick, By by) {
-//        waitForElementToBeClickable(toClick);
-//
-//        while (driver.findElements(by).size() < 1) {
-//            toClick.click();
-//            Wait(10);
-//        }
-//    }
+    /**
+     * Wait for the element to be click able then try to click element toClick
+     * until element is shown
+     *
+     * @param toClick
+     * @param by
+     */
+    public void clickUntillVisibilityOfBy(WebElement toClick, By by) {
+        waitForElementToBeClickable(toClick);
+
+        while (driver.findElements(by).size() < 1) {
+            toClick.click();
+            Wait(10);
+        }
+    }
+
+    /**
+     *
+     * @param element
+     */
     public void clearText(WebElement element) {
 
         element.clear();
