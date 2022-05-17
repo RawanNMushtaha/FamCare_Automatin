@@ -27,11 +27,10 @@ import signin.Signin;
 @Suite.SuiteClasses({
     ClientDriver.class,
     Signin.class, //    SigninLayout.class,
-//    SigninWithInvalid.class,
-//    SignupLayout.class,
-//    SiginupWithInvalid.class,
-//    Quit.class,
-})
+    //    SigninWithInvalid.class,
+    //    SignupLayout.class,
+    //    SiginupWithInvalid.class,
+    Quit.class,})
 
 public class MvnTest {
 
