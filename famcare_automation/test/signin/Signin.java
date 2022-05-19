@@ -33,15 +33,15 @@ public class Signin {
     @BeforeClass
     public static void delay() {
         try {
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Signin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("SigninLayout Delay 10 seconds applied ");
+        System.out.println("SigninLayout Delay 1 second applied ");
     }
 
     @Test
-    public void testsingin() {
+    public void test1_singin() {
         String mobileelementXpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[1]";
         ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(mobileelementXpath));
         ClientDriver.base.getElementByXpath(mobileelementXpath).click();
@@ -51,9 +51,22 @@ public class Signin {
         ClientDriver.driver.getKeyboard().sendKeys("1234567");
         String singinButtonXpath = "//android.widget.Button[@content-desc=\"تسجيل الدخول\"]";
         ClientDriver.base.getElementByXpath(singinButtonXpath).click();
-        String WelcomeTextXpath = "//android.view.View[@content-desc=\"أهلاً بك\"]";
-        String NameOfClientXpath = "//android.view.View[@content-desc=\"AM\"]";
-        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(WelcomeTextXpath));
+
+    }
+
+    @Test
+    public void test2_welcomeScreen() {
+        String tourXpath = "//android.view.View[@content-desc=\"مستعد للجولة التعريفية؟\"]";
+        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(tourXpath));
+        String IgnoreButtonXpath = "//android.widget.Button[@content-desc=\"تجاهل\"]";
+        ClientDriver.base.getElementByXpath(IgnoreButtonXpath).click();
+    }
+
+    @Test
+    public void test3_homeScreen() {
+        //        String WelcomeTextXpath = "//android.view.View[@content-desc=\"أهلاً بك\"]";
+//        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(WelcomeTextXpath));
+        String NameOfClientXpath = "//android.view.View[@content-desc=\"aseel\"]";
         ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(NameOfClientXpath));
     }
 }
