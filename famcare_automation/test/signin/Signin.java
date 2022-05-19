@@ -41,26 +41,19 @@ public class Signin {
     }
 
     @Test
-    public void testlogin() {
-//        String loginButtonXpath = "//*[@contentDescription=\"تسجيل الدخول\"]";
-        String loginButtonXpath = "//android.widget.Button[@content-desc=\"تسجيل الدخول\"]";
-        System.out.println("Start sign in");
-        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(loginButtonXpath));
-        ClientDriver.base.getElementByXpath(loginButtonXpath).click();
-
-//        ClientDriver.base.getElementByXpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[1]").click();
-//        ClientDriver.driver.getKeyboard().sendKeys("0599741147");
-//        ClientDriver.base.getElementByXpath("//*[@class='android.widget.EditText']").click();
-//        ClientDriver.driver.getKeyboard().sendKeys("1234567");
-//        ClientDriver.base.getElementByXpath("//*[@contentDescription='تسجيل الدخول' and @class='android.widget.Button']").click();
-//        ClientDriver.base.getElementByXpath("//*[@contentDescription='مستعد للجولة التعريفية؟']").click();
-//        ClientDriver.base.getElementByXpath("//*[@contentDescription='تجاهل']").click();
-//        ClientDriver.base.getElementByXpath("//*[contains(@contentDescription,'الرئيسية')]").click();
-//        ClientDriver.base.getElementByXpath("//*[@contentDescription='أهلاً بك']").click();
-//        ClientDriver.base.Wait(5);
-////        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@contentDescription='aseel']")));
-//        ClientDriver.base.getElementByXpath("//*[@contentDescription='aseel']").click();
-        System.out.println("End sign in");
+    public void testsingin() {
+        String mobileelementXpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[1]";
+        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(mobileelementXpath));
+        ClientDriver.base.getElementByXpath(mobileelementXpath).click();
+        ClientDriver.driver.getKeyboard().sendKeys("0599741147");
+        String passwordelementXpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[2]";
+        ClientDriver.base.getElementByXpath(passwordelementXpath).click();
+        ClientDriver.driver.getKeyboard().sendKeys("1234567");
+        String singinButtonXpath = "//android.widget.Button[@content-desc=\"تسجيل الدخول\"]";
+        ClientDriver.base.getElementByXpath(singinButtonXpath).click();
+        String WelcomeTextXpath = "//android.view.View[@content-desc=\"أهلاً بك\"]";
+        String NameOfClientXpath = "//android.view.View[@content-desc=\"AM\"]";
+        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(WelcomeTextXpath));
+        ClientDriver.base.waitForElementToBeVisibleBy(By.xpath(NameOfClientXpath));
     }
-
 }
