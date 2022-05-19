@@ -15,7 +15,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
-import signin.Signin;
 
 /**
  *
@@ -32,7 +31,7 @@ public class Logout {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Signin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Logout.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("Logout Delay 1 second applied ");
     }
